@@ -1,0 +1,31 @@
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+url = "https://bit.ly/4nejNue"
+df = pd.read_csv(url)
+
+# Display first few rows
+print("📄 First 5 rows of the dataset:")
+print(df.head())
+
+# Basic info
+print("\n📊 Dataset Info:")
+print(df.info())
+
+# Descriptive statistics
+print("\n📈 Descriptive Statistics:")
+print(df.describe())
+
+# Mean, median, standard deviation
+print("\n📌 Mean:\n", df.mean(numeric_only=True))
+print("\n📌 Median:\n", df.median(numeric_only=True))
+print("\n📌 Standard Deviation:\n", df.std(numeric_only=True))
+
+# Visualizations: Histograms
+df.hist(bins=20, figsize=(12, 8), edgecolor='black')
+plt.suptitle("Histograms of Iris Dataset Features")
+plt.tight_layout()
+plt.show()
